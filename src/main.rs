@@ -18,8 +18,6 @@ enum Commands {
     Prune,
     /// Show contributors ranked by number of commits
     Pulse,
-    /// Run both sweep and prune
-    Tidy,
 }
 
 fn main() -> Result<()> {
@@ -29,7 +27,6 @@ fn main() -> Result<()> {
         Commands::Sweep => commands::sweep::run()?,
         Commands::Prune => commands::prune::run()?,
         Commands::Pulse => commands::pulse::run()?,
-        Commands::Tidy => commands::tidy::run()?,
     }
 
     Ok(())
