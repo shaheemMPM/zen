@@ -4,7 +4,7 @@ use clap::{Parser, Subcommand};
 use anyhow::Result;
 
 #[derive(Parser)]
-#[command(name = "zen", about = "Keep your repos at peace 🧘‍♂️")]
+#[command(name = "zen", about = "Keep your repos at peace 🧘‍♂️", author, version, long_about = None)]
 struct Cli {
     #[command(subcommand)]
     command: Commands,

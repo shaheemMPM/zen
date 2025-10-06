@@ -2,6 +2,9 @@
 name = "zen"
 version = "0.1.0"
 edition = "2024"
+authors = ["Shaheem <shaheem.mpm@gmail.com>"]
+description = "A minimal CLI tool built with RUST to keep your repos clean and peaceful 🧘"
+license = "MIT"
 
 [dependencies]
 anyhow = "1.0.100"
