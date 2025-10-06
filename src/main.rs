@@ -17,7 +17,11 @@ enum Commands {
     /// Delete local branches that no longer exist on origin
     Prune,
     /// Show contributors ranked by number of commits
-    Pulse,
+    Pulse {
+        /// Rank by lines changed instead of commit count
+        #[arg(short, long)]
+        lines: bool,
+    },
 }
 
 fn main() -> Result<()> {
@@ -26,7 +30,7 @@ fn main() -> Result<()> {
     match cli.command {
         Commands::Sweep => commands::sweep::run()?,
         Commands::Prune => commands::prune::run()?,
-        Commands::Pulse => commands::pulse::run()?,
+        Commands::Pulse { lines } => commands::pulse::run(lines)?,
     }
 
     Ok(())
